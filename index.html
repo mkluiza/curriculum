@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae – Malicski Luiza Cristina</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --navy: #0D1B2A;
+            --gold: #B8892A;
+            --gold-lt: #D4A84B;
+            --mid: #1E3A5F;
+            --gray: #6B7A8D;
+            --light: #EEE9DF;
+            --paper: #FAF8F4;
+            --white: #FFFFFF;
+            --line: rgba(184, 137, 42, 0.3);
+            --accent-bg: rgba(184, 137, 42, 0.06);
+        }
+
+        body {
+            background: #e8e3d8;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            color: var(--navy);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* ── Page ── */
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            background: var(--paper);
+            box-shadow: 0 20px 80px rgba(13, 27, 42, 0.25), 0 2px 8px rgba(13, 27, 42, 0.1);
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--navy) 0%, transparent 60%);
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        .page::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(315deg, var(--gold) 0%, transparent 60%);
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        /* ── Header ── */
+        .header {
+            background: var(--navy);
+            padding: 48px 56px 42px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-lt) 50%, transparent 100%);
+        }
+
+        .header-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255, 255, 255, 0.015) 30px, rgba(255, 255, 255, 0.015) 31px);
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .header-photo-wrap {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-photo-placeholder {
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.3);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            margin-top: 14px;
+            align-items: center;
+        }
+
+        .contact-item {
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+
+        .contact-item:hover {
+            color: var(--gold-lt);
+        }
+
+        .contact-icon {
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        .contact-sep {
+            color: var(--gold);
+            opacity: 0.4;
+            font-size: 14px;
+        }
+
+        .cv-label {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cv-label::after {
+            content: '';
+            flex: 1;
+            max-width: 60px;
+            height: 1px;
+            background: var(--gold);
+            opacity: 0.5;
+        }
+
+        .cv-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .cv-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 14.5px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Body ── */
+        .body {
+            padding: 0 56px 48px;
+        }
+
+        /* ── Section ── */
+        .section {
+            margin-top: 36px;
+        }
+
+        .section-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold) 0%, rgba(184, 137, 42, 0.12) 100%);
+        }
+
+        /* ── Profile ── */
+        .profile-text {
+            font-size: 13.5px;
+            line-height: 1.85;
+            color: #3a4a5c;
+            text-align: justify;
+        }
+
+        /* ── Experience Entry ── */
+        .entry {
+            margin-bottom: 26px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+
+        .entry-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 15.5px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .entry-dates {
+            font-size: 12px;
+            color: var(--gray);
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .entry-org {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--mid);
+            margin-bottom: 10px;
+        }
+
+        .entry-org span {
+            color: var(--gold);
+            margin: 0 4px;
+        }
+
+        .entry-desc {
+            font-size: 13.5px;
+            color: #3a4a5c;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        /* ── Quote ── */
+        .quote {
+            border-left: 3px solid var(--gold);
+            padding: 10px 18px;
+            margin: 12px 0 16px;
+            background: var(--accent-bg);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .quote p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 13.5px;
+            color: var(--mid);
+            line-height: 1.7;
+        }
+
+        /* ── Bullet list ── */
+        .bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bullets li {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #3a4a5c;
+            padding: 3px 0 3px 20px;
+            position: relative;
+        }
+
+        .bullets li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 11px;
+            top: 5px;
+        }
+
+        .bullets li strong {
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        /* ── Sub-label ── */
+        .sub-label {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--mid);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 14px 0 6px;
+        }
+
+        /* ── Skills grid ── */
+        .skills-grid {
+            display: grid;
+            gap: 7px;
+        }
+
+        .skill-row {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 12px;
+            font-size: 13px;
+            align-items: baseline;
+        }
+
+        .skill-label {
+            font-weight: 500;
+            color: var(--navy);
+            font-size: 12.5px;
+        }
+
+        .skill-value {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(13, 27, 42, 0.06);
+            border: 1px solid rgba(13, 27, 42, 0.1);
+            border-radius: 3px;
+            padding: 2px 8px;
+            font-size: 11.5px;
+            color: var(--navy);
+            margin: 2px 2px 2px 0;
+            font-weight: 400;
+        }
+
+        .skill-tag.gold {
+            background: rgba(184, 137, 42, 0.1);
+            border-color: rgba(184, 137, 42, 0.3);
+            color: #7a5a14;
+        }
+
+        .skill-tag.ai {
+            background: rgba(88, 86, 214, 0.1);
+            border-color: rgba(88, 86, 214, 0.25);
+            color: #4a3fa0;
+        }
+
+        /* ── Education ── */
+        .edu-grid {
+            display: grid;
+            gap: 8px;
+        }
+
+        .edu-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: baseline;
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(13, 27, 42, 0.06);
+        }
+
+        .edu-item:last-child {
+            border-bottom: none;
+        }
+
+        .edu-degree {
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--navy);
+        }
+
+        .edu-school {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        .edu-year {
+            font-size: 11.5px;
+            color: var(--gold);
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        /* ── Languages ── */
+        .lang-row {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .lang-item {
+            text-align: center;
+        }
+
+        .lang-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .lang-level {
+            font-size: 11px;
+            color: var(--gray);
+            margin-top: 2px;
+            letter-spacing: 0.3px;
+        }
+
+        .lang-dots {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.2;
+        }
+
+        .dot.filled {
+            opacity: 1;
+        }
+
+        /* ── Footer strip ── */
+        .footer-strip {
+            background: var(--navy);
+            padding: 14px 56px;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-item {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-item strong {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .footer-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.5;
+        }
+
+        /* ── Two-col layout ── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 40px;
+        }
+
+        /* ── Additional info block ── */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 40px;
+        }
+
+        .info-block-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--mid);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+
+        .info-block-text {
+            font-size: 12.5px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ── Extracurricular ── */
+        .extra-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .extra-tag {
+            display: inline-block;
+            background: var(--white);
+            border: 1px solid rgba(13, 27, 42, 0.1);
+            border-radius: 4px;
+            padding: 5px 12px;
+            font-size: 12px;
+            color: var(--navy);
+        }
+
+        .extra-tag .extra-icon {
+            margin-right: 5px;
+            color: var(--gold);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                max-width: 100%;
+                border-radius: 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .header,
+            .body {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-row {
+                justify-content: center;
+            }
+
+            .cv-title {
+                font-size: 30px;
+            }
+
+            .skill-row {
+                grid-template-columns: 1fr;
+            }
+
+            .two-col,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-strip {
+                padding: 14px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- ══ HEADER ══ -->
+        <header class="header">
+            <div class="header-bg"></div>
+            <div class="header-content">
+                <div class="header-inner">
+                    <div class="header-photo-wrap">
+                        <img src="malicski-luiza.jpg" alt="Malicski Luiza Cristina" class="header-photo"
+                            onerror="this.style.display='none';this.parentNode.innerHTML='<span class=\'header-photo-placeholder\'>ML</span>'" />
+                    </div>
+                    <div class="header-text">
+                        <div class="cv-label">Curriculum Vitae</div>
+                        <div class="cv-title">Malicski Luiza<br>Cristina</div>
+                        <div class="cv-subtitle">Developer in Training &nbsp;·&nbsp; Linguist &nbsp;·&nbsp; AI
+                            Enthusiast</div>
+                        <div class="contact-row">
+                            <a href="mailto:malicski.luiza@yahoo.com" class="contact-item">
+                                <span class="contact-icon">✉</span> malicski.luiza@yahoo.com
+                            </a>
+                            <span class="contact-sep">·</span>
+                            <span class="contact-item"><span class="contact-icon">☎</span> +40 762 789 964</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ══ BODY ══ -->
+        <main class="body">
+
+            <!-- Profile -->
+            <section class="section">
+                <div class="section-title">Profile</div>
+                <p class="profile-text">
+                    Motivated and self-taught individual with a background in translation and communication, who has
+                    transitioned into the IT field through independent study and intensive mentorship. Over the course
+                    of
+                    one and a half years, I was mentored from zero IT knowledge to the level of a software architect
+                    capable
+                    of working independently — as acknowledged by my mentor. I hold solid knowledge in Linux, Bash
+                    scripting,
+                    Regex, and databases, and have hands-on experience with modern full-stack technologies and
+                    AI-assisted
+                    development workflows. Eager to join a human-scale company and committed to continuous professional
+                    growth.
+                </p>
+            </section>
+
+            <!-- Technical Experience -->
+            <section class="section">
+                <div class="section-title">Technical Experience</div>
+
+                <!-- Mentorship -->
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Observer & Junior Developer</div>
+                        <div class="entry-dates">~2024 – 2026</div>
+                    </div>
+                    <div class="entry-org">Internal Programming Project <span>·</span> Informal Mentorship</div>
+                    <p class="entry-desc">
+                        Shadowed and actively collaborated with an experienced developer on a real-world project.
+                    </p>
+                    <div class="sub-label">Technologies & Skills Gained</div>
+                    <ul class="bullets">
+                        <li><strong>Frontend frameworks:</strong> SvelteKit, Remix</li>
+                        <li><strong>Database:</strong> MongoDB (document-oriented, queries, integration)</li>
+                        <li><strong>Cloud & Backend:</strong> Google Firebase (authentication, Firestore, hosting)</li>
+                        <li><strong>UI libraries & styling:</strong> Tailwind CSS, shadcn/ui, Ant Design (antd)</li>
+                        <li><strong>Linux terminal:</strong> navigation, file permissions, common commands</li>
+                        <li><strong>Bash scripting:</strong> writing scripts, automating repetitive tasks</li>
+                        <li><strong>Regex:</strong> filtering</li>
+                        <li><strong>Programming mindset:</strong> "less code, more impact" — clean, modular,
+                            maintainable code</li>
+                        <li><strong>Good practices:</strong> meaningful naming, rapid testing, code organisation</li>
+                    </ul>
+                </div>
+
+                <!-- Bootcamp -->
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Complete Web Development Bootcamp</div>
+                        <div class="entry-dates">Angela Yu · Udemy</div>
+                    </div>
+                    <div class="entry-org">400+ modules</div>
+                    <ul class="bullets">
+                        <li>Completed the full curriculum covering web development and databases</li>
+                        <li>Hands-on projects with a structured and gradual learning path</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Skills & Technologies -->
+            <section class="section">
+                <div class="section-title">Skills & Technologies</div>
+                <div class="skills-grid">
+                    <div class="skill-row">
+                        <span class="skill-label">Frontend</span>
+                        <span class="skill-value">
+                            <span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span
+                                class="skill-tag">Bootstrap</span><span class="skill-tag">JavaScript</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Full-Stack Frameworks</span>
+                        <span class="skill-value">
+                            <span class="skill-tag gold">SvelteKit</span><span class="skill-tag gold">Remix</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Backend & Databases</span>
+                        <span class="skill-value">
+                            <span class="skill-tag">Node.js</span><span class="skill-tag">Express.js</span><span
+                                class="skill-tag">MongoDB</span><span class="skill-tag">Firebase</span><span
+                                class="skill-tag">Go (Golang)</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">DevOps & Tools</span>
+                        <span class="skill-value">
+                            <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span
+                                class="skill-tag">Linux terminal</span><span class="skill-tag">Bash</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">AI & Productivity</span>
+                        <span class="skill-value">
+                            <span class="skill-tag ai">AI-assisted development</span><span class="skill-tag ai">Prompt
+                                engineering</span><span class="skill-tag ai">AI pair-programming</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Concepts</span>
+                        <span class="skill-value">
+                            <span class="skill-tag">RESTful APIs</span><span class="skill-tag">Regex</span><span
+                                class="skill-tag">Debugging</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Cybersecurity</span>
+                        <span class="skill-value"
+                            style="color:var(--gold); font-style:italic; font-size:12.5px;">Currently exploring
+                            introductory concepts — learning interest in progress</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Soft Skills</span>
+                        <span class="skill-value">Logical thinking · Self-discipline · Perseverance · Attention to
+                            detail · Problem-solving</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Two-column: Experience + Education -->
+            <div class="two-col">
+
+                <section class="section">
+                    <div class="section-title">Relevant Experience</div>
+
+                    <div class="entry">
+                        <div class="entry-header">
+                            <div class="entry-title" style="font-size:14px;">Judiciary Interpreter</div>
+                            <div class="entry-dates">2024 – 2025</div>
+                        </div>
+                        <div class="entry-org">GFTIJ</div>
+                        <ul class="bullets">
+                            <li>Strong analytical and confidentiality skills under pressure — transferable to handling
+                                sensitive IT data and client cases</li>
+                        </ul>
+                    </div>
+
+                    <div class="entry" style="margin-top:16px;">
+                        <div class="entry-header">
+                            <div class="entry-title" style="font-size:14px;">Freelance Language Tutor</div>
+                            <div class="entry-dates">2018 – 2026</div>
+                        </div>
+                        <ul class="bullets">
+                            <li>Designed and delivered tailored lessons, improving logical thinking and structured
+                                communication — relevant for explaining technical concepts clearly</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section-title">Education</div>
+                    <div class="edu-grid">
+                        <div class="edu-item">
+                            <div>
+                                <div class="edu-degree">Master's – Multilingual Translation & Editing</div>
+                                <div class="edu-school">UPEC Paris (MRT)</div>
+                            </div>
+                            <div class="edu-year">2022–2024</div>
+                        </div>
+                        <div class="edu-item">
+                            <div>
+                                <div class="edu-degree">Bachelor's – Spanish Language & Culture</div>
+                                <div class="edu-school">Sorbonne University (LLCER)</div>
+                            </div>
+                            <div class="edu-year">2019–2021</div>
+                        </div>
+                        <div class="edu-item">
+                            <div>
+                                <div class="edu-degree">Erasmus+</div>
+                                <div class="edu-school">University of Almería, Spain</div>
+                            </div>
+                            <div class="edu-year">2020–2021</div>
+                        </div>
+                        <div class="edu-item">
+                            <div>
+                                <div class="edu-degree">Scientific Baccalaureate</div>
+                                <div class="edu-school">Jean Vilar, Meaux — Physics & Chemistry</div>
+                            </div>
+                            <div class="edu-year">—</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Languages -->
+            <section class="section">
+                <div class="section-title">Languages</div>
+                <div class="lang-row">
+                    <div class="lang-item">
+                        <div class="lang-name">Romanian</div>
+                        <div class="lang-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                        </div>
+                        <div class="lang-level">Native</div>
+                    </div>
+                    <div class="lang-item">
+                        <div class="lang-name">French</div>
+                        <div class="lang-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                        </div>
+                        <div class="lang-level">Native</div>
+                    </div>
+                    <div class="lang-item">
+                        <div class="lang-name">Spanish</div>
+                        <div class="lang-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="lang-level">Fluent</div>
+                    </div>
+                    <div class="lang-item">
+                        <div class="lang-name">English</div>
+                        <div class="lang-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="lang-level">B2–C1</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Skills & Tools -->
+            <section class="section">
+                <div class="section-title">Additional Skills & Tools</div>
+                <div class="info-grid">
+                    <div>
+                        <div class="info-block-title">IT Tools</div>
+                        <p class="info-block-text">VS Code, Google Meet, Zoom, Office Suite, Zotero, Adobe Suite,
+                            WordPress, Trados, MultiTerm</p>
+                    </div>
+                    <div>
+                        <div class="info-block-title">Familiar with</div>
+                        <p class="info-block-text">Ticketing systems (theoretical), data validation, web development
+                            (JS, Bash, HTML/CSS)</p>
+                    </div>
+                    <div>
+                        <div class="info-block-title">Certifications</div>
+                        <p class="info-block-text">Health & Safety Risk Prevention (PCR 1 & 2)</p>
+                    </div>
+                    <div>
+                        <div class="info-block-title">Driver's License</div>
+                        <p class="info-block-text">Category B</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Extracurricular -->
+            <section class="section">
+                <div class="section-title">Extracurricular Activities</div>
+                <div class="extra-row">
+                    <span class="extra-tag"><span class="extra-icon">🏓</span> Table Tennis — FFTT (France), Federación
+                        Española (Spain), CSM Arad (Romania)</span>
+                    <span class="extra-tag"><span class="extra-icon">⚽</span> Football — Frajti Neuman Arad
+                        (2012)</span>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ══ FOOTER ══ -->
+        <footer class="footer-strip">
+            <div class="footer-item"><strong>Open to opportunities</strong></div>
+            <div class="footer-dot"></div>
+            <div class="footer-item">Human-scale company <strong>preferred</strong></div>
+            <div class="footer-dot"></div>
+            <div class="footer-item">Continuous learner <strong>·</strong> Self-motivated</div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
