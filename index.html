@@ -574,10 +574,17 @@
             color: var(--gold);
         }
 
+        @page {
+            margin: 0;
+            size: A4;
+        }
+
         @media print {
             body {
                 background: white;
                 padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             .page {
@@ -670,8 +677,7 @@
                     scripting,
                     Regex, and databases, and have hands-on experience with modern full-stack technologies and
                     AI-assisted
-                    development workflows. Eager to join a human-scale company and committed to continuous professional
-                    growth.
+                    development workflows. Committed to continuous professional growth.
                 </p>
             </section>
 
@@ -936,8 +942,6 @@
         <!-- ══ FOOTER ══ -->
         <footer class="footer-strip">
             <div class="footer-item"><strong>Open to opportunities</strong></div>
-            <div class="footer-dot"></div>
-            <div class="footer-item">Human-scale company <strong>preferred</strong></div>
             <div class="footer-dot"></div>
             <div class="footer-item">Continuous learner <strong>·</strong> Self-motivated</div>
         </footer>
