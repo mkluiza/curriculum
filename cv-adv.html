@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV – Malicski Luiza Cristina · Assistante ADV</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --navy: #0D1B2A;
+            --gold: #B8892A;
+            --gold-lt: #D4A84B;
+            --mid: #1E3A5F;
+            --gray: #6B7A8D;
+            --light: #EEE9DF;
+            --paper: #FAF8F4;
+            --white: #FFFFFF;
+            --line: rgba(184, 137, 42, 0.3);
+            --accent-bg: rgba(184, 137, 42, 0.06);
+        }
+
+        body {
+            background: #e8e3d8;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            color: var(--navy);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            background: var(--paper);
+            box-shadow: 0 20px 80px rgba(13, 27, 42, 0.25), 0 2px 8px rgba(13, 27, 42, 0.1);
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--navy) 0%, transparent 60%);
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        .page::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(315deg, var(--gold) 0%, transparent 60%);
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .header {
+            background: var(--navy);
+            padding: 48px 56px 42px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-lt) 50%, transparent 100%);
+        }
+
+        .header-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255, 255, 255, 0.015) 30px, rgba(255, 255, 255, 0.015) 31px);
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .header-photo-wrap {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-photo-placeholder {
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.3);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            margin-top: 14px;
+            align-items: center;
+        }
+
+        .contact-item {
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+
+        .contact-item:hover {
+            color: var(--gold-lt);
+        }
+
+        .contact-icon {
+            color: var(--gold);
+            font-size: 12px;
+        }
+
+        .contact-sep {
+            color: var(--gold);
+            opacity: 0.4;
+            font-size: 14px;
+        }
+
+        .cv-label {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cv-label::after {
+            content: '';
+            flex: 1;
+            max-width: 60px;
+            height: 1px;
+            background: var(--gold);
+            opacity: 0.5;
+        }
+
+        .cv-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .cv-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 14.5px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        .body {
+            padding: 0 56px 48px;
+        }
+
+        .section {
+            margin-top: 36px;
+        }
+
+        .section-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold) 0%, rgba(184, 137, 42, 0.12) 100%);
+        }
+
+        .profile-text {
+            font-size: 13.5px;
+            line-height: 1.85;
+            color: #3a4a5c;
+            text-align: justify;
+        }
+
+        .entry {
+            margin-bottom: 26px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+
+        .entry-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 15.5px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .entry-dates {
+            font-size: 12px;
+            color: var(--gray);
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .entry-org {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--mid);
+            margin-bottom: 10px;
+        }
+
+        .entry-org span {
+            color: var(--gold);
+            margin: 0 4px;
+        }
+
+        .entry-desc {
+            font-size: 13.5px;
+            color: #3a4a5c;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bullets li {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #3a4a5c;
+            padding: 3px 0 3px 20px;
+            position: relative;
+        }
+
+        .bullets li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 11px;
+            top: 5px;
+        }
+
+        .bullets li strong {
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .sub-label {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--mid);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 14px 0 6px;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 7px;
+        }
+
+        .skill-row {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 12px;
+            font-size: 13px;
+            align-items: baseline;
+        }
+
+        .skill-label {
+            font-weight: 500;
+            color: var(--navy);
+            font-size: 12.5px;
+        }
+
+        .skill-value {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(13, 27, 42, 0.06);
+            border: 1px solid rgba(13, 27, 42, 0.1);
+            border-radius: 3px;
+            padding: 2px 8px;
+            font-size: 11.5px;
+            color: var(--navy);
+            margin: 2px 2px 2px 0;
+            font-weight: 400;
+        }
+
+        .skill-tag.gold {
+            background: rgba(184, 137, 42, 0.1);
+            border-color: rgba(184, 137, 42, 0.3);
+            color: #7a5a14;
+        }
+
+        .skill-tag.ai {
+            background: rgba(88, 86, 214, 0.1);
+            border-color: rgba(88, 86, 214, 0.25);
+            color: #4a3fa0;
+        }
+
+        .edu-grid {
+            display: grid;
+            gap: 8px;
+        }
+
+        .edu-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: baseline;
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(13, 27, 42, 0.06);
+        }
+
+        .edu-item:last-child {
+            border-bottom: none;
+        }
+
+        .edu-degree {
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--navy);
+        }
+
+        .edu-school {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        .edu-year {
+            font-size: 11.5px;
+            color: var(--gold);
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .lang-row {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .lang-item {
+            text-align: center;
+        }
+
+        .lang-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .lang-level {
+            font-size: 11px;
+            color: var(--gray);
+            margin-top: 2px;
+            letter-spacing: 0.3px;
+        }
+
+        .lang-dots {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.2;
+        }
+
+        .dot.filled {
+            opacity: 1;
+        }
+
+        .footer-strip {
+            background: var(--navy);
+            padding: 14px 56px;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-item {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-item strong {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .footer-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.5;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 40px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 40px;
+        }
+
+        .info-block-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--mid);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+
+        .info-block-text {
+            font-size: 12.5px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .extra-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .extra-tag {
+            display: inline-block;
+            background: var(--white);
+            border: 1px solid rgba(13, 27, 42, 0.1);
+            border-radius: 4px;
+            padding: 5px 12px;
+            font-size: 12px;
+            color: var(--navy);
+        }
+
+        .extra-tag .extra-icon {
+            margin-right: 5px;
+            color: var(--gold);
+        }
+
+        .quote {
+            border-left: 3px solid var(--gold);
+            padding: 10px 18px;
+            margin: 12px 0 16px;
+            background: var(--accent-bg);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .quote p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 13.5px;
+            color: var(--mid);
+            line-height: 1.7;
+        }
+
+        /* ── CV Switcher ── */
+        .cv-switch {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            z-index: 10;
+            display: flex;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .cv-btn {
+            padding: 5px 14px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.45);
+            transition: all 0.25s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cv-btn.active {
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: 20px;
+        }
+
+        .cv-btn:hover:not(.active) {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @page {
+            margin: 0;
+            size: A4;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .page {
+                box-shadow: none;
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+            .cv-switch {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+
+            .header,
+            .body {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-row {
+                justify-content: center;
+            }
+
+            .cv-title {
+                font-size: 30px;
+            }
+
+            .skill-row {
+                grid-template-columns: 1fr;
+            }
+
+            .two-col,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-strip {
+                padding: 14px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- ══ HEADER ══ -->
+        <header class="header">
+            <div class="cv-switch">
+                <a href="index.html" class="cv-btn">IT</a>
+                <a href="cv-adv.html" class="cv-btn active">Admin</a>
+            </div>
+            <div class="header-bg"></div>
+            <div class="header-content">
+                <div class="header-inner">
+                    <div class="header-photo-wrap">
+                        <img src="malicski-luiza.jpg" alt="Malicski Luiza Cristina" class="header-photo"
+                            onerror="this.style.display='none';this.parentNode.innerHTML='<span class=\'header-photo-placeholder\'>ML</span>'" />
+                    </div>
+                    <div class="header-text">
+                        <div class="cv-label">Curriculum Vitae</div>
+                        <div class="cv-title">Malicski Luiza<br>Cristina</div>
+                        <div class="cv-subtitle">Gestion & Administration &nbsp;·&nbsp; Multilingue &nbsp;·&nbsp;
+                            Organisée & Autonome</div>
+                        <div class="contact-row">
+                            <a href="mailto:malicski.luiza@yahoo.com" class="contact-item">
+                                <span class="contact-icon">✉</span> malicski.luiza@yahoo.com
+                            </a>
+                            <span class="contact-sep">·</span>
+                            <span class="contact-item"><span class="contact-icon">☎</span> +33 7 53 11 60 45</span>
+                            <span class="contact-sep">·</span>
+                            <a href="https://mkluiza.github.io/curriculum/cv-adv.html" target="_blank"
+                                class="contact-item">
+                                <span class="contact-icon">🔗</span> mkluiza.github.io/curriculum/cv-adv
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ══ BODY ══ -->
+        <main class="body">
+
+            <!-- Profil -->
+            <section class="section">
+                <div class="section-title">Profil</div>
+                <p class="profile-text">
+                    Diplômée d'un Master en traduction multilingue, dotée d'une forte capacité d'organisation,
+                    d'une communication soignée et d'un sens aigu du service client. Expérience diversifiée
+                    en gestion administrative, suivi de dossiers, coordination avec différents interlocuteurs et
+                    traitement de données. Reconnue pour mon autonomie, ma réactivité et ma rigueur dans le respect
+                    des délais. À l'aise avec les outils bureautiques et numériques, je recherche un poste en
+                    Administration des Ventes où valoriser mes compétences organisationnelles et relationnelles
+                    dans un environnement en télétravail.
+                </p>
+            </section>
+
+            <!-- Expérience Professionnelle -->
+            <section class="section">
+                <div class="section-title">Expérience Professionnelle</div>
+
+                <!-- Interprète judiciaire -->
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Interprète judiciaire assermentée</div>
+                        <div class="entry-dates">2024 – 2025</div>
+                    </div>
+                    <div class="entry-org">GFTIJ <span>·</span> Tribunaux</div>
+                    <ul class="bullets">
+                        <li><strong>Gestion de dossiers sensibles</strong> avec rigueur, confidentialité et respect
+                            strict des délais imposés par les juridictions</li>
+                        <li><strong>Coordination</strong> entre avocats, magistrats et services administratifs pour
+                            garantir la transmission des documents dans les temps</li>
+                        <li><strong>Communication professionnelle</strong> avec des interlocuteurs variés sous pression,
+                            en assurant clarté et précision</li>
+                        <li><strong>Suivi administratif</strong> des convocations, rapports et pièces de procédure</li>
+                    </ul>
+                </div>
+
+                <!-- Tutrice de langues -->
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Tutrice de langues indépendante</div>
+                        <div class="entry-dates">2018 – 2026</div>
+                    </div>
+                    <div class="entry-org">Activité freelance <span>·</span> Clientèle variée</div>
+                    <ul class="bullets">
+                        <li><strong>Gestion autonome de l'activité :</strong> prise de rendez-vous, suivi client,
+                            facturation et relances</li>
+                        <li><strong>Conception de supports sur mesure</strong> adaptés aux besoins de chaque client —
+                            sens de l'écoute et orientation client</li>
+                        <li><strong>Organisation rigoureuse</strong> du planning et gestion simultanée de plusieurs
+                            élèves</li>
+                        <li><strong>Communication pédagogique</strong> structurée et claire, transférable à
+                            l'explication de procédures internes</li>
+                    </ul>
+                </div>
+
+                <!-- Projet informatique -->
+                <div class="entry">
+                    <div class="entry-header">
+                        <div class="entry-title">Assistante projet & gestion de données</div>
+                        <div class="entry-dates">~2024 – 2026</div>
+                    </div>
+                    <div class="entry-org">Projet interne <span>·</span> Collaboration avec un développeur</div>
+                    <ul class="bullets">
+                        <li><strong>Saisie et mise à jour de données</strong> dans des bases de données (MongoDB,
+                            Firebase)</li>
+                        <li><strong>Suivi de l'avancement du projet</strong> et coordination des tâches entre les
+                            parties prenantes</li>
+                        <li><strong>Paramétrage et configuration</strong> d'outils de gestion et de tableaux de bord
+                        </li>
+                        <li><strong>Maîtrise des outils numériques :</strong> Git, terminal Linux, automatisation via
+                            scripts Bash</li>
+                        <li><strong>Validation et contrôle qualité</strong> des données saisies — filtrage par
+                            expressions régulières (Regex)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Compétences Clés -->
+            <section class="section">
+                <div class="section-title">Compétences Clés</div>
+                <div class="skills-grid">
+                    <div class="skill-row">
+                        <span class="skill-label">Gestion administrative</span>
+                        <span class="skill-value">
+                            <span class="skill-tag gold">Suivi de commandes</span><span
+                                class="skill-tag gold">Facturation</span><span class="skill-tag gold">Relance
+                                clients</span><span class="skill-tag gold">Mise à jour de dossiers</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Outils bureautiques</span>
+                        <span class="skill-value">
+                            <span class="skill-tag">Suite Office (Word, Excel, PowerPoint)</span><span
+                                class="skill-tag">Google Workspace</span><span class="skill-tag">Zoom</span><span
+                                class="skill-tag">Google Meet</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Outils numériques</span>
+                        <span class="skill-value">
+                            <span class="skill-tag">VS Code</span><span class="skill-tag">Git / GitHub</span><span
+                                class="skill-tag">Terminal Linux</span><span class="skill-tag">Bash</span><span
+                                class="skill-tag">WordPress</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Bases de données</span>
+                        <span class="skill-value">
+                            <span class="skill-tag">MongoDB</span><span class="skill-tag">Firebase</span><span
+                                class="skill-tag">Saisie & validation de données</span><span class="skill-tag">Regex
+                                (filtrage)</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Communication</span>
+                        <span class="skill-value">
+                            <span class="skill-tag gold">Relation client</span><span class="skill-tag gold">Rédaction
+                                professionnelle</span><span class="skill-tag gold">Communication multilingue</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Productivité & IA</span>
+                        <span class="skill-value">
+                            <span class="skill-tag ai">Rédaction assistée par IA</span><span
+                                class="skill-tag ai">Automatisation de tâches</span><span class="skill-tag ai">Outils de
+                                productivité IA</span>
+                        </span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Savoir-être</span>
+                        <span class="skill-value">Organisation · Méthode · Autonomie · Réactivité · Esprit d'équipe ·
+                            Adaptabilité · Souci du détail</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Two-column: Formation + Langues -->
+            <div class="two-col">
+
+                <section class="section">
+                    <div class="section-title">Formation</div>
+                    <div class="edu-grid">
+                        <div class="edu-item">
+                            <div>
+                                <div class="edu-degree">Master — Traduction multilingue & édition</div>
+                                <div class="edu-school">UPEC Paris (MRT)</div>
+                            </div>
+                            <div class="edu-year">2022–2024</div>
+                        </div>
+                        <div class="edu-item">
+                            <div>
+                                <div class="edu-degree">Licence — Langue & culture espagnoles</div>
+                                <div class="edu-school">Sorbonne Université (LLCER)</div>
+                            </div>
+                            <div class="edu-year">2019–2022</div>
+                        </div>
+                        <div class="edu-item">
+                            <div>
+                                <div class="edu-degree">Erasmus+</div>
+                                <div class="edu-school">Université d'Almería, Espagne</div>
+                            </div>
+                            <div class="edu-year">2020–2021</div>
+                        </div>
+                        <div class="edu-item">
+                            <div>
+                                <div class="edu-degree">Baccalauréat scientifique</div>
+                                <div class="edu-school">Lycée Jean Vilar, Meaux — Physique-Chimie</div>
+                            </div>
+                            <div class="edu-year">2018–2019</div>
+                        </div>
+                        <div class="edu-item">
+                            <div>
+                                <div class="edu-degree">Bootcamp Développement Web</div>
+                                <div class="edu-school">Angela Yu · Udemy — 400+ modules</div>
+                            </div>
+                            <div class="edu-year">2025</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="section-title">Langues</div>
+                    <div class="lang-row">
+                        <div class="lang-item">
+                            <div class="lang-name">Roumain</div>
+                            <div class="lang-dots">
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                            </div>
+                            <div class="lang-level">Maternelle</div>
+                        </div>
+                        <div class="lang-item">
+                            <div class="lang-name">Français</div>
+                            <div class="lang-dots">
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                            </div>
+                            <div class="lang-level">Maternelle</div>
+                        </div>
+                        <div class="lang-item">
+                            <div class="lang-name">Espagnol</div>
+                            <div class="lang-dots">
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="lang-level">Courant</div>
+                        </div>
+                        <div class="lang-item">
+                            <div class="lang-name">Anglais</div>
+                            <div class="lang-dots">
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot filled"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="lang-level">B2–C1</div>
+                        </div>
+                    </div>
+
+                    <!-- Motivation quote -->
+                    <div class="quote" style="margin-top: 28px;">
+                        <p>« La motivation et la capacité d'adaptation restent déterminantes » — c'est précisément ce
+                            qui me définit. Autodidacte et rigoureuse, je m'adapte rapidement à tout nouvel outil ou
+                            procédure.</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Informations Complémentaires -->
+            <section class="section">
+                <div class="section-title">Informations Complémentaires</div>
+                <div class="info-grid">
+                    <div>
+                        <div class="info-block-title">Outils spécialisés</div>
+                        <p class="info-block-text">Trados, MultiTerm, Zotero, Suite Adobe, WordPress</p>
+                    </div>
+                    <div>
+                        <div class="info-block-title">Environnement de travail</div>
+                        <p class="info-block-text">Habituée au télétravail à 100 % — autonome, organisée et disciplinée
+                        </p>
+                    </div>
+                    <div>
+                        <div class="info-block-title">Certifications</div>
+                        <p class="info-block-text">Prévention et Secours Civiques (PSC 1 & 2)</p>
+                    </div>
+                    <div>
+                        <div class="info-block-title">Permis de conduire</div>
+                        <p class="info-block-text">Catégorie B</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Centres d'intérêt -->
+            <section class="section">
+                <div class="section-title">Centres d'intérêt</div>
+                <div class="extra-row">
+                    <span class="extra-tag"><span class="extra-icon">🏓</span> Tennis de table — FFTT (France),
+                        Federación Española (Espagne), CSM Arad (Roumanie)</span>
+                    <span class="extra-tag"><span class="extra-icon">⚽</span> Football — Frajti Neuman Arad
+                        (2012)</span>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ══ FOOTER ══ -->
+        <footer class="footer-strip">
+            <div class="footer-item"><strong>Disponible immédiatement</strong></div>
+            <div class="footer-dot"></div>
+            <div class="footer-item">Télétravail 100 % <strong>·</strong> Autonome & réactive</div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

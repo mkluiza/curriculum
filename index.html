@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 
 <head>
     <meta charset="UTF-8">
@@ -594,6 +594,90 @@
             }
         }
 
+        /* ── Language Switcher ── */
+        .lang-switch {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            z-index: 10;
+            display: flex;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .lang-btn {
+            padding: 5px 14px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.45);
+            transition: all 0.25s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: 20px;
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ── CV Switcher ── */
+        .cv-switch {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            z-index: 10;
+            display: flex;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .cv-btn {
+            padding: 5px 14px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.45);
+            transition: all 0.25s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cv-btn.active {
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: 20px;
+        }
+
+        .cv-btn:hover:not(.active) {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media print {
+
+            .lang-switch,
+            .cv-switch {
+                display: none;
+            }
+        }
+
         @media (max-width: 640px) {
 
             .header,
@@ -637,6 +721,14 @@
 
         <!-- ══ HEADER ══ -->
         <header class="header">
+            <div class="cv-switch">
+                <a href="index.html" class="cv-btn active">IT</a>
+                <a href="cv-adv.html" class="cv-btn">Admin</a>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" onclick="setLang('fr')">FR</button>
+            </div>
             <div class="header-bg"></div>
             <div class="header-content">
                 <div class="header-inner">
@@ -647,9 +739,10 @@
                     <div class="header-text">
                         <div class="cv-label">Curriculum Vitae</div>
                         <div class="cv-title">Malicski Luiza<br>Cristina</div>
-                        <div class="cv-subtitle">Developer in Training &nbsp;·&nbsp; Linux & Bash &nbsp;·&nbsp; AI
+                        <div class="cv-subtitle" data-i18n="subtitle">Developer in Training &nbsp;·&nbsp; Linux & Bash
+                            &nbsp;·&nbsp; AI
                             Enthusiast</div>
-                        <div class="contact-row">
+                        <div class="contact-row" data-i18n-html="contact_row">
                             <a href="mailto:malicski.luiza@yahoo.com" class="contact-item">
                                 <span class="contact-icon">✉</span> malicski.luiza@yahoo.com
                             </a>
@@ -670,8 +763,8 @@
 
             <!-- Profile -->
             <section class="section">
-                <div class="section-title">Profile</div>
-                <p class="profile-text">
+                <div class="section-title" data-i18n="sec_profile">Profile</div>
+                <p class="profile-text" data-i18n="profile_text">
                     Background in translation and communication, recently transitioned into the IT field through
                     intensive independent study and mentorship. Over the past 18 months I have developed strong
                     practical skills in Linux, Bash scripting, Regex, and databases, along with hands-on experience
@@ -682,20 +775,21 @@
 
             <!-- Technical Experience -->
             <section class="section">
-                <div class="section-title">Technical Experience</div>
+                <div class="section-title" data-i18n="sec_techexp">Technical Experience</div>
 
                 <!-- Mentorship -->
                 <div class="entry">
                     <div class="entry-header">
-                        <div class="entry-title">Observer & Junior Developer</div>
+                        <div class="entry-title" data-i18n="techexp_title1">Observer & Junior Developer</div>
                         <div class="entry-dates">~2024 – 2026</div>
                     </div>
-                    <div class="entry-org">Internal Programming Project <span>·</span> Informal Mentorship</div>
-                    <p class="entry-desc">
+                    <div class="entry-org" data-i18n-html="techexp_org1">Internal Programming Project <span>·</span>
+                        Informal Mentorship</div>
+                    <p class="entry-desc" data-i18n="techexp_desc1">
                         Shadowed and actively collaborated with an experienced developer on a real-world project.
                     </p>
-                    <div class="sub-label">Technologies & Skills Gained</div>
-                    <ul class="bullets">
+                    <div class="sub-label" data-i18n="techexp_sub1">Technologies & Skills Gained</div>
+                    <ul class="bullets" data-i18n-html="techexp_bullets1">
                         <li><strong>Frontend frameworks:</strong> SvelteKit, Remix</li>
                         <li><strong>Database:</strong> MongoDB (document-oriented, queries, integration)</li>
                         <li><strong>Cloud & Backend:</strong> Google Firebase (authentication, Firestore, hosting)</li>
@@ -714,11 +808,11 @@
                 <!-- Bootcamp -->
                 <div class="entry">
                     <div class="entry-header">
-                        <div class="entry-title">Complete Web Development Bootcamp</div>
+                        <div class="entry-title" data-i18n="techexp_title2">Complete Web Development Bootcamp</div>
                         <div class="entry-dates">Angela Yu · Udemy</div>
                     </div>
-                    <div class="entry-org">400+ modules</div>
-                    <ul class="bullets">
+                    <div class="entry-org" data-i18n="techexp_org2">400+ modules</div>
+                    <ul class="bullets" data-i18n-html="techexp_bullets2">
                         <li>Completed the full curriculum covering web development and databases</li>
                         <li>Hands-on projects with a structured and gradual learning path</li>
                     </ul>
@@ -727,8 +821,8 @@
 
             <!-- Skills & Technologies -->
             <section class="section">
-                <div class="section-title">Skills & Technologies</div>
-                <div class="skills-grid">
+                <div class="section-title" data-i18n="sec_skills">Skills & Technologies</div>
+                <div class="skills-grid" data-i18n-html="skills_grid">
                     <div class="skill-row">
                         <span class="skill-label">Frontend</span>
                         <span class="skill-value">
@@ -790,15 +884,16 @@
             <div class="two-col">
 
                 <section class="section">
-                    <div class="section-title">Relevant Experience</div>
+                    <div class="section-title" data-i18n="sec_relexp">Relevant Experience</div>
 
                     <div class="entry">
                         <div class="entry-header">
-                            <div class="entry-title" style="font-size:14px;">Judiciary Interpreter</div>
+                            <div class="entry-title" style="font-size:14px;" data-i18n="relexp_title1">Judiciary
+                                Interpreter</div>
                             <div class="entry-dates">2024 – 2025</div>
                         </div>
                         <div class="entry-org">GFTIJ</div>
-                        <ul class="bullets">
+                        <ul class="bullets" data-i18n-html="relexp_bullets1">
                             <li>Strong analytical and confidentiality skills under pressure — transferable to handling
                                 sensitive IT data and client cases</li>
                         </ul>
@@ -806,10 +901,11 @@
 
                     <div class="entry" style="margin-top:16px;">
                         <div class="entry-header">
-                            <div class="entry-title" style="font-size:14px;">Freelance Language Tutor</div>
+                            <div class="entry-title" style="font-size:14px;" data-i18n="relexp_title2">Freelance
+                                Language Tutor</div>
                             <div class="entry-dates">2018 – 2026</div>
                         </div>
-                        <ul class="bullets">
+                        <ul class="bullets" data-i18n-html="relexp_bullets2">
                             <li>Designed and delivered tailored lessons, improving logical thinking and structured
                                 communication — relevant for explaining technical concepts clearly</li>
                         </ul>
@@ -817,8 +913,8 @@
                 </section>
 
                 <section class="section">
-                    <div class="section-title">Education</div>
-                    <div class="edu-grid">
+                    <div class="section-title" data-i18n="sec_edu">Education</div>
+                    <div class="edu-grid" data-i18n-html="edu_grid">
                         <div class="edu-item">
                             <div>
                                 <div class="edu-degree">Master's – Multilingual Translation & Editing</div>
@@ -854,8 +950,8 @@
 
             <!-- Languages -->
             <section class="section">
-                <div class="section-title">Languages</div>
-                <div class="lang-row">
+                <div class="section-title" data-i18n="sec_lang">Languages</div>
+                <div class="lang-row" data-i18n-html="lang_row">
                     <div class="lang-item">
                         <div class="lang-name">Romanian</div>
                         <div class="lang-dots">
@@ -905,8 +1001,8 @@
 
             <!-- Additional Skills & Tools -->
             <section class="section">
-                <div class="section-title">Additional Skills & Tools</div>
-                <div class="info-grid">
+                <div class="section-title" data-i18n="sec_addskills">Additional Skills & Tools</div>
+                <div class="info-grid" data-i18n-html="info_grid">
                     <div>
                         <div class="info-block-title">IT Tools</div>
                         <p class="info-block-text">VS Code, Google Meet, Zoom, Office Suite, Zotero, Adobe Suite,
@@ -930,8 +1026,8 @@
 
             <!-- Extracurricular -->
             <section class="section">
-                <div class="section-title">Extracurricular Activities</div>
-                <div class="extra-row">
+                <div class="section-title" data-i18n="sec_extra">Extracurricular Activities</div>
+                <div class="extra-row" data-i18n-html="extra_row">
                     <span class="extra-tag"><span class="extra-icon">🏓</span> Table Tennis — FFTT (France), Federación
                         Española (Spain), CSM Arad (Romania)</span>
                     <span class="extra-tag"><span class="extra-icon">⚽</span> Football — Frajti Neuman Arad
@@ -942,13 +1038,83 @@
         </main>
 
         <!-- ══ FOOTER ══ -->
-        <footer class="footer-strip">
+        <footer class="footer-strip" data-i18n-html="footer">
             <div class="footer-item"><strong>Open to opportunities</strong></div>
             <div class="footer-dot"></div>
             <div class="footer-item">Continuous learner <strong>·</strong> Self-motivated</div>
         </footer>
 
     </div>
+
+    <script>
+        const translations = {
+            fr: {
+                contact_row: '<a href="mailto:malicski.luiza@yahoo.com" class="contact-item"><span class="contact-icon">✉</span> malicski.luiza@yahoo.com</a><span class="contact-sep">·</span><span class="contact-item"><span class="contact-icon">☎</span> +33 7 53 11 60 45</span><span class="contact-sep">·</span><a href="https://mkluiza.github.io/curriculum/" target="_blank" class="contact-item"><span class="contact-icon">🔗</span> mkluiza.github.io/curriculum</a>',
+                subtitle: 'Développeuse en formation \u00a0·\u00a0 Linux & Bash \u00a0·\u00a0 Passionnée d\'IA',
+                sec_profile: 'Profil',
+                profile_text: 'Issue du domaine de la traduction et de la communication, j\'ai récemment effectué une reconversion vers l\'informatique grâce à un apprentissage intensif en autodidacte et un mentorat. Au cours des 18 derniers mois, j\'ai développé de solides compétences pratiques en Linux, scripts Bash, Regex et bases de données, ainsi qu\'une expérience concrète dans la création de projets avec des technologies full-stack modernes et des méthodes de développement assistées par l\'IA. Reconnue pour ma rapidité d\'apprentissage, mon autonomie et ma capacité d\'analyse.',
+                sec_techexp: 'Expérience Technique',
+                techexp_title1: 'Observatrice & Développeuse Junior',
+                techexp_org1: 'Projet de programmation interne <span>·</span> Mentorat informel',
+                techexp_desc1: 'Observation et collaboration active avec un développeur expérimenté sur un projet concret.',
+                techexp_sub1: 'Technologies & Compétences Acquises',
+                techexp_bullets1: '<li><strong>Frameworks frontend :</strong> SvelteKit, Remix</li><li><strong>Base de données :</strong> MongoDB (orienté document, requêtes, intégration)</li><li><strong>Cloud & Backend :</strong> Google Firebase (authentification, Firestore, hébergement)</li><li><strong>Bibliothèques UI & styling :</strong> Tailwind CSS, shadcn/ui, Ant Design (antd)</li><li><strong>Terminal Linux :</strong> navigation, permissions, commandes courantes</li><li><strong>Serveur Debian :</strong> travail sur des environnements serveur basés sur Debian</li><li><strong>Nginx :</strong> configuration et gestion du serveur web</li><li><strong>Scripts Bash :</strong> écriture de scripts, automatisation des tâches répétitives</li><li><strong>Regex :</strong> filtrage</li><li><strong>État d\'esprit développeur :</strong> « moins de code, plus d\'impact » — code propre, modulaire, maintenable</li><li><strong>Bonnes pratiques :</strong> nommage significatif, tests rapides, organisation du code</li>',
+                techexp_title2: 'Bootcamp Complet en Développement Web',
+                techexp_org2: '400+ modules',
+                techexp_bullets2: '<li>Curriculum complet couvrant le développement web et les bases de données</li><li>Projets pratiques avec un parcours d\'apprentissage structuré et progressif</li>',
+                sec_skills: 'Compétences & Technologies',
+                skills_grid: '<div class="skill-row"><span class="skill-label">Frontend</span><span class="skill-value"><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span class="skill-tag">Bootstrap</span><span class="skill-tag">JavaScript</span></span></div><div class="skill-row"><span class="skill-label">Frameworks Full-Stack</span><span class="skill-value"><span class="skill-tag gold">SvelteKit</span><span class="skill-tag gold">Remix</span></span></div><div class="skill-row"><span class="skill-label">Backend & Bases de données</span><span class="skill-value"><span class="skill-tag">Node.js</span><span class="skill-tag">Express.js</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Firebase</span><span class="skill-tag">Go (Golang)</span></span></div><div class="skill-row"><span class="skill-label">DevOps & Outils</span><span class="skill-value"><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">Terminal Linux</span><span class="skill-tag">Bash</span><span class="skill-tag">Serveur Debian</span><span class="skill-tag">Nginx</span></span></div><div class="skill-row"><span class="skill-label">IA & Productivité</span><span class="skill-value"><span class="skill-tag ai">Développement assisté par IA</span><span class="skill-tag ai">Ingénierie de prompts</span><span class="skill-tag ai">Programmation en binôme avec IA</span></span></div><div class="skill-row"><span class="skill-label">Concepts</span><span class="skill-value"><span class="skill-tag">APIs RESTful</span><span class="skill-tag">Regex</span><span class="skill-tag">Débogage</span></span></div><div class="skill-row"><span class="skill-label">Cybersécurité</span><span class="skill-value" style="color:var(--gold); font-style:italic; font-size:12.5px;">Exploration des concepts d\'introduction — intérêt en cours d\'apprentissage</span></div><div class="skill-row"><span class="skill-label">Savoir-être</span><span class="skill-value">Esprit logique · Autodiscipline · Persévérance · Souci du détail · Résolution de problèmes</span></div>',
+                sec_relexp: 'Expérience Professionnelle',
+                relexp_title1: 'Interprète judiciaire',
+                relexp_bullets1: '<li>Solides compétences analytiques et de confidentialité sous pression — transférables à la gestion de données sensibles et de dossiers clients en informatique</li>',
+                relexp_title2: 'Tutrice de langues indépendante',
+                relexp_bullets2: '<li>Conception et animation de cours sur mesure, développant la pensée logique et la communication structurée — pertinent pour l\'explication claire de concepts techniques</li>',
+                sec_edu: 'Formation',
+                edu_grid: '<div class="edu-item"><div><div class="edu-degree">Master — Traduction multilingue & édition</div><div class="edu-school">UPEC Paris (MRT)</div></div><div class="edu-year">2022–2024</div></div><div class="edu-item"><div><div class="edu-degree">Licence — Langue & culture espagnoles</div><div class="edu-school">Sorbonne Université (LLCER)</div></div><div class="edu-year">2019–2022</div></div><div class="edu-item"><div><div class="edu-degree">Erasmus+</div><div class="edu-school">Université d\'Almería, Espagne</div></div><div class="edu-year">2020–2021</div></div><div class="edu-item"><div><div class="edu-degree">Baccalauréat scientifique</div><div class="edu-school">Lycée Jean Vilar, Meaux — Physique-Chimie</div></div><div class="edu-year">2018–2019</div></div>',
+                sec_lang: 'Langues',
+                lang_row: '<div class="lang-item"><div class="lang-name">Roumain</div><div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div><div class="lang-level">Maternelle</div></div><div class="lang-item"><div class="lang-name">Français</div><div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div><div class="lang-level">Maternelle</div></div><div class="lang-item"><div class="lang-name">Espagnol</div><div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div><div class="lang-level">Courant</div></div><div class="lang-item"><div class="lang-name">Anglais</div><div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div><div class="lang-level">B2–C1</div></div>',
+                sec_addskills: 'Compétences & Outils Complémentaires',
+                info_grid: '<div><div class="info-block-title">Outils informatiques</div><p class="info-block-text">VS Code, Google Meet, Zoom, Suite Office, Zotero, Suite Adobe, WordPress, Trados, MultiTerm</p></div><div><div class="info-block-title">Notions</div><p class="info-block-text">Validation de données, développement web (JS, Bash, HTML/CSS)</p></div><div><div class="info-block-title">Certifications</div><p class="info-block-text">Prévention et Secours Civiques (PSC 1 & 2)</p></div><div><div class="info-block-title">Permis de conduire</div><p class="info-block-text">Catégorie B</p></div>',
+                sec_extra: 'Activités Extrascolaires',
+                extra_row: '<span class="extra-tag"><span class="extra-icon">🏓</span> Tennis de table — FFTT (France), Federación Española (Espagne), CSM Arad (Roumanie)</span><span class="extra-tag"><span class="extra-icon">⚽</span> Football — Frajti Neuman Arad (2012)</span>',
+                footer: '<div class="footer-item"><strong>Ouverte aux opportunités</strong></div><div class="footer-dot"></div><div class="footer-item">Formation continue <strong>·</strong> Autonome</div>'
+            }
+        };
+
+        // Store original EN content
+        const originals = {};
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            originals[el.getAttribute('data-i18n')] = { el, text: el.textContent };
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            originals[el.getAttribute('data-i18n-html')] = { el, html: el.innerHTML };
+        });
+
+        function setLang(lang) {
+            document.getElementById('html-root').setAttribute('lang', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
+            });
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (lang === 'fr' && translations.fr[key]) {
+                    el.textContent = translations.fr[key];
+                } else if (originals[key]) {
+                    el.textContent = originals[key].text;
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                if (lang === 'fr' && translations.fr[key]) {
+                    el.innerHTML = translations.fr[key];
+                } else if (originals[key]) {
+                    el.innerHTML = originals[key].html;
+                }
+            });
+        }
+    </script>
 
 </body>
 
